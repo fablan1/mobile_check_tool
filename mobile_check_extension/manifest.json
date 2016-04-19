@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Mobile Check",
+  "description": "Check current Mobile Status",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background":{
+    "scripts":["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab",
+    "http://146.148.122.86:3000/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["mobile_check.js"]
+    }
+  ]
+}
